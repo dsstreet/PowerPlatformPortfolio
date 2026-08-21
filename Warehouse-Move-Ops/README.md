@@ -42,13 +42,16 @@ Power Automate handled submission detection, validation, status updates, and use
 
 The SharePoint experience centralized template access, move submissions, historical requests, and workflow status.
 
+<img width="1056" height="398" alt="image" src="https://github.com/user-attachments/assets/36129a28-a475-4ba0-b33e-220600923198" />
 
 
 ### Submission Tracking
 
 Submitted requests could be tracked through the workflow, with validation and processing status surfaced back to users.
 
+<img width="1048" height="558" alt="image" src="https://github.com/user-attachments/assets/ae0ff0d0-9fa7-4c91-844c-7d9a3a8960c1" />
 
+<img width="1064" height="367" alt="image" src="https://github.com/user-attachments/assets/c8784df2-2a1d-4a14-8e0e-6196216b987d" />
 
 ---
 
