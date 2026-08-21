@@ -156,7 +156,7 @@ Individual record creation uses contextual customer and item selection workflows
 
 Input behavior and validation help prevent invalid submissions and provide feedback before data is processed.
 
-<img width="588" height="393" alt="image" src="https://github.com/user-attachments/assets/83673836-8e4e-4af3-be3f-851667276785" />
+<img width="588" height="393" alt="image" src="https://github.com/user-attachments/assets/58333fba-de45-458a-9c79-6729c4c1070f" />
 
 ---
 
