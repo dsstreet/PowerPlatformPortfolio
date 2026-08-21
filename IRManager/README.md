@@ -135,7 +135,7 @@ Users download the standardized template and submit completed Excel workbooks th
 **Import Processing Results**  
 After processing, users receive a summary of successful, skipped, and rejected records, with processing issues available for export and correction.
 
-<img width="975" height="467" alt="image" src="https://github.com/user-attachments/assets/272b96c3-7abd-40f0-83bd-3ae0b486073d" />
+<img width="975" height="467" alt="image" src="https://github.com/user-attachments/assets/b3346dc7-e401-4132-ac90-cbc1f9323288" />
 
 ---
 
