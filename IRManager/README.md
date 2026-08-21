@@ -1,4 +1,4 @@
-<img width="975" height="698" alt="image" src="https://github.com/user-attachments/assets/378ed966-d5d1-4b17-a354-409c32af5a9c" /># IRManager
+# IRManager
 
 **Power Apps • Power Automate • SQL Server • SharePoint • Excel Online • SSRS**
 
@@ -172,9 +172,8 @@ The solution maintains historical information supporting operational auditing an
 
 A dedicated deletion-history experience provides read-only visibility into removed restriction records while separating historical information from active restriction management.
 
-**Screenshot: Deletion History**
+<img width="1056" height="591" alt="image" src="https://github.com/user-attachments/assets/a27488d6-af74-4ec6-b48e-64b45d219016" />
 
-<!-- Add: images/deletion-history.png -->
 
 ---
 
@@ -184,9 +183,6 @@ IRManager includes reporting and export capabilities for operational review and 
 
 Automated workflows support the creation and temporary staging of output files, while scheduled cleanup prevents temporary application files from accumulating indefinitely.
 
-**Optional Screenshot: Reporting / Export**
-
-<!-- Add if desired: images/reporting.png -->
 
 ---
 
