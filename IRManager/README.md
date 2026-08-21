@@ -2,6 +2,8 @@
 
 **Power Apps • Power Automate • SQL Server • SharePoint • Excel Online • SSRS**
 
+<img width="1092" height="739" alt="image" src="https://github.com/user-attachments/assets/41732639-5818-49e5-a24b-691ebf3cfe90" />
+
 ## Overview
 
 IRManager is a production business application I architected and developed to provide a scalable, centralized approach to managing customer and item restrictions.
