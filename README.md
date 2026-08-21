@@ -39,7 +39,7 @@ Business process solution for managing warehouse move submissions through a cent
 - Historical submission visibility
 - Centralized SharePoint interface for operational users
 
-[View Warehouse Move Ops Case Study](./Warehouse-Move-Ops/README.md)
+[View Warehouse Move Ops Case Study](./warehouse-move-ops/README.md)
 
 ---
 
