@@ -10,7 +10,7 @@ These case studies highlight my experience translating business requirements int
 
 ### IRManager
 
-**Power Apps • Power Automate • SQL Server • SharePoint • SSRS**
+**Power Apps • Power Automate • SQL Server • SharePoint • Excel Online • SSRS**
 
 Enterprise item restriction management solution designed to streamline the creation, maintenance, bulk processing, and auditing of customer and item restrictions.
 
