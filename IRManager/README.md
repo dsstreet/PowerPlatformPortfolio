@@ -111,26 +111,31 @@ Users can navigate large restriction datasets using search, sorting, cascading f
 
 The application supports individual and multi-record selection, inline updates, and bulk operations to reduce repetitive maintenance work.
 
+**Restriction Group View**  
+High-level view for locating and selecting restriction groups.
+
 <img width="975" height="698" alt="image" src="https://github.com/user-attachments/assets/0fc402e0-790b-4be0-a117-1493d715b4dc" />
 
-<img width="1377" height="808" alt="image" src="https://github.com/user-attachments/assets/beaca5d1-138c-4858-8700-e6eba3dd9b82" />
+**Restriction Detail View**  
+Drillthrough view for managing the customer and item restrictions within a selected group.
 
+<img width="1377" height="808" alt="image" src="https://github.com/user-attachments/assets/beaca5d1-138c-4858-8700-e6eba3dd9b82" />
 
 ---
 
 ### Mass Import and Validation
 
-IRManager supports Excel-based mass imports for higher-volume restriction maintenance.
+IRManager supports Excel-based mass imports for higher-volume restriction maintenance. Submitted workbooks are temporarily staged in SharePoint and processed through Excel Online and Power Automate before the data is passed to SQL Server for validation and processing.
 
-Submitted workbooks are temporarily staged in SharePoint and processed through an automated workflow using Excel Online before submitted data is passed to the SQL processing layer.
-
-Processing results distinguish between successful, skipped, and rejected records, providing clear feedback and allowing problematic records to be exported for review and correction.
+**Mass Import Workflow**  
+Users download the standardized template and submit completed Excel workbooks through the application for automated processing.
 
 <img width="975" height="635" alt="image" src="https://github.com/user-attachments/assets/5004a958-1ae4-48c0-9090-eeb9e102a2f6" />
 
+**Import Processing Results**  
+After processing, users receive a summary of successful, skipped, and rejected records, with processing issues available for export and correction.
+
 <img width="975" height="467" alt="image" src="https://github.com/user-attachments/assets/272b96c3-7abd-40f0-83bd-3ae0b486073d" />
-
-
 
 ---
 
@@ -142,7 +147,6 @@ This allows repetitive updates to be performed as a controlled operation rather 
 
 
 <img width="1329" height="756" alt="image" src="https://github.com/user-attachments/assets/8e2a2530-01a2-408e-a0f4-617e90a16da5" />
-
 
 ---
 
@@ -164,7 +168,6 @@ A dedicated deletion-history experience provides read-only visibility into remov
 
 <img width="1056" height="591" alt="image" src="https://github.com/user-attachments/assets/a27488d6-af74-4ec6-b48e-64b45d219016" />
 
-
 ---
 
 ### Reporting and Export
@@ -172,7 +175,6 @@ A dedicated deletion-history experience provides read-only visibility into remov
 IRManager includes reporting and export capabilities for operational review and downstream analysis.
 
 Automated workflows support the creation and temporary staging of output files, while scheduled cleanup prevents temporary application files from accumulating indefinitely.
-
 
 ---
 
