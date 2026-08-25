@@ -88,33 +88,81 @@ This allowed the existing Excel-based process to remain familiar to users while 
 
 ## V2 Exploration
 
-As the project evolved, I explored a broader architecture that treated the submitted workbook as one component of a larger operational workflow.
+As the project evolved, I explored a broader architecture that treated the submitted workbook as the entry point into a larger operational workflow.
+
+The proposed process began with a Sales Admin submitting an approved macro-enabled Excel template through the controlled SharePoint environment. Submission metadata, such as the targeted move date, could be captured as part of the intake process before Power Automate validated and processed the workbook.
+
+The template itself identified the type of warehouse move request being submitted. This selection could then drive different workflow branches, allowing validation, processing, and exception handling to vary based on the operational scenario.
 
 The expanded design considered:
 
-- Additional workflow states and exception handling
-- Microsoft Teams notifications
-- SQL Server processing and integration
-- More structured backend validation
-- Improved operational tracking
-- Automated user communication
+* Controlled SharePoint intake using an approved XLSM template
+* Required submission metadata and workbook validation
+* Request-type-driven workflow branching
+* SQL Server validation and backend processing
+* Interactive Microsoft Teams Adaptive Cards for Sales Admin review
+* Exception handling and operational revalidation
+* Branch Manager coordination when additional confirmation was required
+* Automated Outlook communication summarizing issues requiring follow-up
+* Centralized workflow execution through a dedicated service account
+* Workflow status tracking and user feedback
 
-Conceptually, Power Automate would serve as the orchestration layer between the submission experience and supporting enterprise services.
+Rather than using Teams only for notifications, the proposed design used Adaptive Cards as a human-in-the-loop interaction point. Validation issues could be presented to the Sales Admin for review, allowing the workflow to continue or move into a revalidation path based on their response.
+
+When additional branch-level confirmation was required, the workflow could support further coordination by generating a summarized communication containing the issues requiring review before processing continued.
 
 ```text
-                  SharePoint / Excel
+                    Sales Admin
+                         │
+                         ▼
+                Approved XLSM Template
+                         │
+                         ▼
+                SharePoint Submission
+                  + Required Metadata
                          │
                          ▼
                    Power Automate
+                  (Service Account)
                          │
-             ┌───────────┼───────────┐
-             ▼           ▼           ▼
-         SharePoint     Teams    SQL Server
-             │           │           │
-             └───────────┼───────────┘
                          ▼
-                 Status / Feedback
+                Workbook Validation
+                         │
+                         ▼
+                  Request Type
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           Workflow   Workflow   Workflow
+            Path A     Path B     Path C
+              │          │          │
+              └──────────┼──────────┘
+                         ▼
+               Operational Validation
+                         │
+                  ┌──────┴──────┐
+                  ▼             ▼
+               Continue      Exception
+                                │
+                                ▼
+                       Teams Adaptive Card
+                           Sales Admin
+                                │
+                         ┌──────┴──────┐
+                         ▼             ▼
+                      Continue    Re-validation
+                                      │
+                                      ▼
+                              Outlook Summary
+                                      │
+                                      ▼
+                               Branch Manager
+                                      │
+                                      ▼
+                              Status / Feedback
 ```
+
+Power Automate would serve as the orchestration layer connecting the controlled submission process, backend validation, and human decision points. A dedicated service account was considered for shared workflow ownership and execution, reducing dependency on individual user accounts while supporting the available licensing environment.
 
 The project was ultimately shelved before this expanded architecture was completed.
 
@@ -134,30 +182,32 @@ If the process is revisited, a dedicated .NET/Blazor application could provide a
 
 My involvement included:
 
-- Stakeholder requirements gathering
-- Existing-process analysis
-- Solution and workflow design
-- SharePoint implementation
-- Power Automate development
-- Excel submission-process design
-- Validation and workflow-status design
-- Testing and troubleshooting
-- Expanded architecture exploration
+* Stakeholder requirements gathering
+* Existing-process analysis
+* Solution and workflow design
+* SharePoint implementation
+* Power Automate development
+* Excel/XLSM submission-process design
+* Validation and conditional workflow-routing design
+* Human-in-the-loop workflow design using Teams Adaptive Cards
+* Testing and troubleshooting
+* Expanded architecture exploration
 
-The project provided hands-on experience taking a business process from stakeholder discovery through working low-code implementation while also evaluating when future requirements may justify moving toward a dedicated application architecture.
+The project provided hands-on experience taking a business process from stakeholder discovery through working low-code implementation while also designing more advanced workflow orchestration and evaluating when future requirements may justify moving toward a dedicated application architecture.
 
 ---
 
 ## Technologies
 
-| Technology | Role |
-| --- | --- |
-| **Power Automate** | Workflow orchestration, validation, and status processing |
-| **SharePoint** | Submission interface, storage, and request visibility |
-| **Excel** | Standardized warehouse move submission template |
-| **Microsoft Teams** | Explored for workflow notifications |
-| **SQL Server** | Explored for expanded backend processing |
-| **.NET / Blazor** | Potential future modernization path |
+| Technology          | Role                                                                            |
+| ------------------- | ------------------------------------------------------------------------------- |
+| **Power Automate**  | Workflow orchestration, validation, conditional routing, and status processing  |
+| **SharePoint**      | Controlled submission interface, storage, metadata, and request visibility      |
+| **Excel / XLSM**    | Standardized warehouse move template and structured workflow input              |
+| **Microsoft Teams** | Adaptive Card-based Sales Admin review and workflow interaction explored for V2 |
+| **Outlook**         | Branch-level exception and revalidation communication explored for V2           |
+| **SQL Server**      | Expanded backend validation and processing explored for V2                      |
+| **.NET / Blazor**   | Potential future modernization path                                             |
 
 ---
 
@@ -174,3 +224,4 @@ The initial Power Platform implementation and requirements work were completed, 
 This case study excludes proprietary source code, confidential business information, production data, credentials, and internal infrastructure details.
 
 Screenshots have been sanitized for public presentation.
+
