@@ -58,7 +58,7 @@ Submitted requests could be tracked through the workflow, with validation and pr
 ## Architecture
 
 ```text
-                    Warehouse User
+                    Sales Admin
                           │
                           ▼
                    Excel Template
